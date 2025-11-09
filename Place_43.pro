@@ -9,23 +9,26 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    menuwidget/extraserviceswidget.cpp \
-    menuwidget/menuwidget.cpp \
-    utility/extraservicemodel.cpp
+    src/main.cpp \
+    src/mainwindow.cpp \
+    src/extraserviceswidget/extraserviceswidget.cpp \
+    src/menuwidget/menuwidget.cpp \
+    src/extraserviceswidget/addextraservicedialog.cpp \
+    src/utility/extraservicemodel.cpp
 
 HEADERS += \
-    mainwindow.h \
-    menuwidget/extraserviceswidget.h \
-    menuwidget/menuwidget.h \
-    utility/extraService.h \
-    utility/extraservicemodel.h
+    src/mainwindow.h \
+    src/extraserviceswidget/extraserviceswidget.h \
+    src/menuwidget/menuwidget.h \
+    src/extraserviceswidget/addextraservicedialog.h \
+    src/utility/extraService.h \
+    src/utility/extraservicemodel.h
 
 FORMS += \
-    mainwindow.ui \
-    menuwidget/extraserviceswidget.ui \
-    menuwidget/menuwidget.ui
+    src/mainwindow.ui \
+    src/extraserviceswidget/extraserviceswidget.ui \
+    src/menuwidget/menuwidget.ui \
+    src/extraserviceswidget/addextraservicedialog.ui
 
 TRANSLATIONS += \
     Place_43_ru_RU.ts

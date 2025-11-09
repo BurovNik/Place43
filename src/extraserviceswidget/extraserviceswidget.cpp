@@ -40,8 +40,21 @@ void ExtraServicesWidget::setupInitialData()
 
 void ExtraServicesWidget::onAddClicked()
 {
-    // TODO: Реализовать диалог добавления
-    QMessageBox::information(this, "Добавить", "Функция добавления будет реализована позже");
+    AddExtraServiceDialog dialog(this);
+    if (dialog.exec() == QDialog::Accepted) {
+        QString name = dialog.serviceName();
+        double cost = dialog.serviceCost();
+
+           // TODO: Добавить логику для добавления новой услуги в модель
+           // Например:
+           // int newId = generateNewId(); // Функция для генерации нового ID
+           // ExtraService newService(newId, name, cost);
+           // m_model->addService(newService);
+
+        QMessageBox::information(this, "Успех",
+                                   QString("Добавлена услуга:\nНазвание: %1\nСтоимость: %2 руб.")
+                                   .arg(name).arg(cost));
+       }
 }
 
 void ExtraServicesWidget::onEditClicked()

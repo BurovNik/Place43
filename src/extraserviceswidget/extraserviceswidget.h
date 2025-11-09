@@ -2,7 +2,8 @@
 #define EXTRASERVICESWIDGET_H
 
 #include <QWidget>
-#include "utility/extraservicemodel.h"
+#include "src/utility/extraservicemodel.h"
+#include "addextraservicedialog.h"
 
 namespace Ui {
 class ExtraServicesWidget;
@@ -26,6 +27,7 @@ private:
 
     Ui::ExtraServicesWidget *ui;
     ExtraServiceModel *m_model; // Добавлен указатель на модель
+
 };
 
 #endif // EXTRASERVICESWIDGET_H
