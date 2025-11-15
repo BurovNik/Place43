@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "src/utility/extraservicemodel.h"
 #include "addextraservicedialog.h"
+#include "reductservicewidget.h"
 
 namespace Ui {
 class ExtraServicesWidget;

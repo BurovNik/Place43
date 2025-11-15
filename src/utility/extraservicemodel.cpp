@@ -48,3 +48,46 @@ void ExtraServiceModel::populate(const QList<ExtraService> &services)
     m_services = services;
     endResetModel();
 }
+
+ExtraService ExtraServiceModel::getService(const QModelIndex &index) const
+{
+    if (!index.isValid() || index.row() >= m_services.size())
+        return ExtraService();
+
+    return m_services.at(index.row());
+}
+
+ExtraService ExtraServiceModel::getService(int row) const
+{
+    if (row < 0 || row >= m_services.size())
+        return ExtraService();
+
+    return m_services.at(row);
+}
+
+void ExtraServiceModel::updateService(int row, const ExtraService &service)
+{
+    if (row < 0 || row >= m_services.size())
+        return;
+
+    beginResetModel();
+    m_services[row] = service;
+    endResetModel();
+}
+
+void ExtraServiceModel::addService(const ExtraService &service)
+{
+    beginInsertRows(QModelIndex(), m_services.size(), m_services.size());
+    m_services.append(service);
+    endInsertRows();
+}
+
+void ExtraServiceModel::removeService(int row)
+{
+    if (row < 0 || row >= m_services.size())
+        return;
+
+    beginRemoveRows(QModelIndex(), row, row);
+    m_services.removeAt(row);
+    endRemoveRows();
+}

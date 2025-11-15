@@ -19,6 +19,15 @@ public:
 
     void populate(const QList<ExtraService> &services);
 
+    // НОВЫЕ МЕТОДЫ ДЛЯ ПОЛУЧЕНИЯ ДАННЫХ
+    ExtraService getService(const QModelIndex &index) const;
+    ExtraService getService(int row) const;
+    void updateService(int row, const ExtraService &service);
+    void addService(const ExtraService &service);
+    void removeService(int row);
+
+    const QList<ExtraService>& getServices() const { return m_services; }
+
 private:
     QList<ExtraService> m_services;
 };

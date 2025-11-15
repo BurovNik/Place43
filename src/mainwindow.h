@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "menuwidget/extraserviceswidget.h"
+#include "extraserviceswidget/extraserviceswidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
