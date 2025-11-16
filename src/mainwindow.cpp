@@ -15,6 +15,10 @@ MainWindow::MainWindow(QWidget *parent)
     m_extraServicesWidget = new ExtraServicesWidget(this);
     int extraServicesIndex = ui->stackedWidget->addWidget(m_extraServicesWidget);
     ui->stackedWidget->setCurrentIndex(extraServicesIndex);
+
+    m_activeCardsWidget = new ActiveCardsWidget(this);
+    int activeCardsIndex = ui->stackedWidget->addWidget(m_activeCardsWidget);
+    ui->stackedWidget->setCurrentIndex(activeCardsIndex);
 }
 
 MainWindow::~MainWindow()
@@ -29,7 +33,7 @@ void MainWindow::slot_allCardsButtonClicked()
 
 void MainWindow::slot_activeCardsButtonClicked()
 {
-    ui->stackedWidget->setCurrentWidget(ui->page_activeCards);
+    ui->stackedWidget->setCurrentWidget(m_activeCardsWidget);
 }
 
 void MainWindow::slot_historyButtonClicked()

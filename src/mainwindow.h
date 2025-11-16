@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "extraserviceswidget/extraserviceswidget.h"
+#include "activecardswidget/activecardswidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,5 +28,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     ExtraServicesWidget *m_extraServicesWidget;
+    ActiveCardsWidget *m_activeCardsWidget;
 };
 #endif // MAINWINDOW_H

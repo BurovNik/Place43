@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     a.setApplicationName("Place43");
     a.setApplicationVersion("0.0.1");
-    a.setApplicationDisplayName("Place43");
+    // a.setApplicationDisplayName("Place43");
 //    QTranslator translator;
 //    const QStringList uiLanguages = QLocale::system().uiLanguages();
 //    for (const QString &locale : uiLanguages) {
@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 //        }
 //    }
     MainWindow w;
+    w.setWindowTitle("Place 43");
     w.show();
     return a.exec();
 }
