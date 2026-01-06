@@ -1,0 +1,9 @@
+{
+    "host": "localhost",
+    "port": 5432,
+    "database": "place43db",
+    "username": "root",
+    "password": "KfMtged7",
+    "connection_timeout": 5000,
+    "max_connections": 10
+}

@@ -20,6 +20,7 @@ SOURCES += \
     src/menuwidget/menuwidget.cpp \
     src/extraserviceswidget/addextraservicedialog.cpp \
     src/utility/cardmodel.cpp \
+    src/utility/databasemanager.cpp \
     src/utility/extraservicemodel.cpp
 
 HEADERS += \
@@ -32,6 +33,7 @@ HEADERS += \
     src/extraserviceswidget/addextraservicedialog.h \
     src/utility/Cards.h \
     src/utility/cardmodel.h \
+    src/utility/databasemanager.h \
     src/utility/extraService.h \
     src/utility/extraservicemodel.h
 
@@ -53,3 +55,6 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    config.json
