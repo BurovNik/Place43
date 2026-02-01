@@ -1,4 +1,7 @@
 #include "extraservicemodel.h"
+#include <QPushButton>
+#include <QHBoxLayout>
+#include <QWidget>
 
 ExtraServiceModel::ExtraServiceModel(QObject *parent)
     : QAbstractTableModel(parent)
@@ -12,21 +15,28 @@ int ExtraServiceModel::rowCount(const QModelIndex &parent) const
 
 int ExtraServiceModel::columnCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? 0 : 3;
+    // Теперь 5 столбцов: ID, Имя, Стоимость, Кнопка Обновить, Кнопка Удалить
+    return parent.isValid() ? 0 : 5;
 }
 
 QVariant ExtraServiceModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid() || role != Qt::DisplayRole)
+    if (!index.isValid())
         return QVariant();
 
-    const ExtraService &service = m_services[index.row()];
-    switch (index.column()) {
-    case 0: return service.id;
-    case 1: return service.name;
-    case 2: return QString::number(service.cost, 'f', 1);
-    default: return QVariant();
+    if (role == Qt::DisplayRole || role == Qt::EditRole) {
+        const ExtraService &service = m_services[index.row()];
+        switch (index.column()) {
+        case 0: return service.id;
+        case 1: return service.name;
+        case 2: return QString::number(service.cost, 'f', 1);
+        case 3: return "Обновить"; // Текст для кнопки обновления
+        case 4: return "Удалить";  // Текст для кнопки удаления
+        default: return QVariant();
+        }
     }
+
+    return QVariant();
 }
 
 QVariant ExtraServiceModel::headerData(int section, Qt::Orientation orientation, int role) const
@@ -38,6 +48,8 @@ QVariant ExtraServiceModel::headerData(int section, Qt::Orientation orientation,
     case 0: return "ID";
     case 1: return "Имя";
     case 2: return "Стоимость";
+    case 3: return "Действия"; // Заголовок для столбца с кнопками
+    case 4: return QVariant(); // Пустой заголовок для второй кнопки
     default: return QVariant();
     }
 }

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "src/utility/extraservicemodel.h"
+#include "src/utility/buttontabledelegate.h"
 #include "addextraservicedialog.h"
 #include "reductservicewidget.h"
 
@@ -23,11 +24,20 @@ private slots:
     void onEditClicked();
     void onDeleteClicked();
 
+    void slot_onUpdateButtonClicked(int row, int column);
+    void slot_onDeleteButtonClicked(int row, int column);
+    void slot_onTableButtonClicked(int row, int column);
+
+signals:
+    void signal_updateCard(const ExtraService &service);
+    void signal_deleteCard(const ExtraService &service);
+
 private:
     void setupInitialData();
 
     Ui::ExtraServicesWidget *ui;
     ExtraServiceModel *m_model; // Добавлен указатель на модель
+    ButtonTableDelegate *m_buttonDelegate;
 
 };
 

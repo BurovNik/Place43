@@ -27,7 +27,7 @@ public:
 
 private:
     QString statusToString(E_cardStatus status) const;
-    QString discountToString(E_dicount discount) const;
+    QString discountToString(E_discount discount) const;
 
     QList<Card> m_cards;
 };

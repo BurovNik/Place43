@@ -9,7 +9,7 @@ enum E_cardStatus {
 
 };
 
-enum E_dicount {
+enum E_discount {
     e_0,
     e_10,
     e_25,
@@ -27,18 +27,18 @@ public:
     qlonglong cardNumber() const {return m_cardNumber;}
     QString cardName() const {return m_cardName;}
     E_cardStatus status() const {return m_status;}
-    E_dicount discount() const {return m_discount;}
+    E_discount discount() const {return m_discount;}
     QDateTime lastVisit() const {return m_lastVisit;}
 
     void setCardName(QString name) {m_cardName = name;}
-    void setDiscount(E_dicount discount){m_discount = discount;}
+    void setDiscount(E_discount discount){m_discount = discount;}
     void setLastVisit(QDateTime visitDateTime) {m_lastVisit = visitDateTime;}
 private:
     int m_cardId;
     qlonglong m_cardNumber;
     QString m_cardName;
     E_cardStatus m_status;
-    E_dicount m_discount;
+    E_discount m_discount;
     QDateTime m_lastVisit;
 };
 

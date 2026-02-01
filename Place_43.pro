@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,8 +19,9 @@ SOURCES += \
     src/extraserviceswidget/extraserviceswidget.cpp \
     src/menuwidget/menuwidget.cpp \
     src/extraserviceswidget/addextraservicedialog.cpp \
+    src/utility/buttontabledelegate.cpp \
     src/utility/cardmodel.cpp \
-    src/utility/databasemanager.cpp \
+    # src/utility/databasemanager.cpp \
     src/utility/extraservicemodel.cpp
 
 HEADERS += \
@@ -32,8 +33,9 @@ HEADERS += \
     src/menuwidget/menuwidget.h \
     src/extraserviceswidget/addextraservicedialog.h \
     src/utility/Cards.h \
+    src/utility/buttontabledelegate.h \
     src/utility/cardmodel.h \
-    src/utility/databasemanager.h \
+    # src/utility/databasemanager.h \
     src/utility/extraService.h \
     src/utility/extraservicemodel.h
 

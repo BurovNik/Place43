@@ -21,11 +21,11 @@ int main(int argc, char *argv[])
 //        }
 //    }
 
-    DatabaseManager& db = DatabaseManager::instance();
+    // DatabaseManager& db = DatabaseManager::instance();
 
-        if (!db.connect("localhost", 5432, "place43db", "user", "pass")) {
-            return 1;
-        }
+       // if (!db.connect("localhost", 5432, "place43db", "user", "pass")) {
+         //   return 1;
+       // }
     MainWindow w;
     w.setWindowTitle("Place 43");
     w.show();

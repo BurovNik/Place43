@@ -89,8 +89,8 @@ QString AddCardDialog::cardName() const
     return ui->lineEdit_cardName->text().trimmed();
 }
 
-E_dicount AddCardDialog::discount() const
+E_discount AddCardDialog::discount() const
 {
     // Получаем выбранную скидку из комбо-бокса
-    return static_cast<E_dicount>(ui->comboBox_cardDicount->currentData().toInt());
+    return static_cast<E_discount>(ui->comboBox_cardDicount->currentData().toInt());
 }

@@ -66,7 +66,7 @@ void ActiveCardsWidget::onAddClicked()
         // Получаем данные из диалога
         qlonglong cardNumber = dialog.cardNumber();
         QString cardName = dialog.cardName();
-        E_dicount discount = dialog.discount();
+        E_discount discount = dialog.discount();
 
         // Создаем новую карту
         int newId = generateNewId(); // Функция для генерации нового ID

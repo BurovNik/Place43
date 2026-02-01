@@ -23,8 +23,23 @@ ExtraServicesWidget::ExtraServicesWidget(QWidget *parent)
 
     // Подключаем кнопки
     connect(ui->pushButton_3, &QPushButton::clicked, this, &ExtraServicesWidget::onAddClicked);
-    connect(ui->pushButton_2, &QPushButton::clicked, this, &ExtraServicesWidget::onEditClicked);
-    connect(ui->pushButton, &QPushButton::clicked, this, &ExtraServicesWidget::onDeleteClicked);
+    // connect(ui->pushButton_2, &QPushButton::clicked, this, &ExtraServicesWidget::onEditClicked);
+    // connect(ui->pushButton, &QPushButton::clicked, this, &ExtraServicesWidget::onDeleteClicked);
+
+    // Создание делегата для кнопок
+    m_buttonDelegate = new ButtonTableDelegate(this);
+
+    // Установка делегата для столбцов с кнопками (столбцы 3 и 4)
+    ui->tableView->setItemDelegateForColumn(3, m_buttonDelegate);
+    ui->tableView->setItemDelegateForColumn(4, m_buttonDelegate);
+
+    // Подключение сигналов от делегата
+    connect(m_buttonDelegate, &ButtonTableDelegate::buttonClicked,
+            this, &ExtraServicesWidget::slot_onTableButtonClicked);
+
+    // Настройка таблицы
+    ui->tableView->horizontalHeader()->setStretchLastSection(true);
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     // Подключаем двойной клик для редактирования
     connect(ui->tableView, &QTableView::doubleClicked, this, &ExtraServicesWidget::onEditClicked);
@@ -124,3 +139,65 @@ void ExtraServicesWidget::onDeleteClicked()
         QMessageBox::information(this, "Успех", "Услуга удалена");
     }
 }
+
+void ExtraServicesWidget::slot_onUpdateButtonClicked(int row, int column)
+{
+    // ПОЛУЧАЕМ ДАННЫЕ ВЫБРАННОЙ УСЛУГИ
+    ExtraService service = m_model->getService(row);
+
+    // TODO добавить проверку, что не пустая услуга нам вернулась
+    // ПЕРЕДАЕМ ДАННЫЕ В ДИАЛОГ
+    ReductServiceWidget dialog(service.name, service.cost, this);
+    if (dialog.exec() == QDialog::Accepted) {
+        QString name = dialog.serviceName();
+        double cost = dialog.serviceCost();
+
+        // ОБНОВЛЯЕМ ДАННЫЕ В МОДЕЛИ
+        service.name = name;
+        service.cost = cost;
+        m_model->updateService(row, service);
+
+        QMessageBox::information(this, "Успех",
+                                 QString("Услуга изменена:\nНазвание: %1\nСтоимость: %2 руб.")
+                                 .arg(name).arg(cost));
+        }
+}
+
+void ExtraServicesWidget::slot_onDeleteButtonClicked(int row, int column)
+{
+
+    ExtraService service = m_model->getService(row);
+
+//    if(service == nullpt)
+//        return;
+// TODO добавить проверку, что не пустая услуга нам вернулась
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Подтверждение удаления",
+                                QString("Вы действительно хотите удалить услугу \"%1\"?")
+                                .arg(service.name),
+                                QMessageBox::Yes | QMessageBox::No);
+
+    if (reply == QMessageBox::Yes) {
+        m_model->removeService(row);
+        QMessageBox::information(this, "Успех", "Услуга удалена");
+    }
+}
+
+void ExtraServicesWidget::slot_onTableButtonClicked(int row, int column)
+{
+    ExtraService service = m_model->getService(row);
+
+    if (column == 3)  // Столбец "Обновить"
+    {
+        // emit signal_updateCard(service);
+        slot_onUpdateButtonClicked(row, column);
+        //onEditClicked();
+    }
+    else if (column == 4) // Столбец "Удалить"
+    {
+        // emit signal_deleteCard(service);
+        slot_onDeleteButtonClicked(row, column);
+        //onDeleteClicked();
+    }
+}
+

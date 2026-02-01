@@ -19,7 +19,7 @@ public:
     // Методы для получения данных
     qlonglong cardNumber() const;
     QString cardName() const;
-    E_dicount discount() const;
+    E_discount discount() const;
 
 private slots:
     void onAccept();

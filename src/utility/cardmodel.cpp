@@ -108,7 +108,7 @@ QString CardModel::statusToString(E_cardStatus status) const
     }
 }
 
-QString CardModel::discountToString(E_dicount discount) const
+QString CardModel::discountToString(E_discount discount) const
 {
     switch (discount) {
     case e_10: return "10%";
