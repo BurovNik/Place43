@@ -1,0 +1,46 @@
+/* Стандартная кнопка */
+/* QPushButton {
+    border: 2px solid #555555;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #333333;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: #e0e0e0;
+    border-color: #777777;
+}
+
+QPushButton:pressed {
+    background-color: #d0d0d0;
+} */
+
+/* Primary кнопка */
+QPushButton[style="primaryButton"] {
+    background-color: #3899FA;
+    border: 2px solid #2A7BC8;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    min-width: 100px;
+}
+
+QPushButton[style="primaryButton"]:hover {
+    background-color: #2A7BC8;
+    border-color: #1F5F9E;
+}
+
+QPushButton[style="primaryButton"]:pressed {
+    background-color: #1F5F9E;
+}
+
+QPushButton[style="primaryButton"]:disabled {
+    background-color: #A3D0FB;
+    border-color: #7FB9F9;
+    color: rgba(255, 255, 255, 0.7);
+}

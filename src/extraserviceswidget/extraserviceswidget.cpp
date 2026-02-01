@@ -22,7 +22,7 @@ ExtraServicesWidget::ExtraServicesWidget(QWidget *parent)
     setupInitialData();
 
     // Подключаем кнопки
-    connect(ui->pushButton_3, &QPushButton::clicked, this, &ExtraServicesWidget::onAddClicked);
+    connect(ui->pushButton_addExtraService, &QPushButton::clicked, this, &ExtraServicesWidget::onAddClicked);
     // connect(ui->pushButton_2, &QPushButton::clicked, this, &ExtraServicesWidget::onEditClicked);
     // connect(ui->pushButton, &QPushButton::clicked, this, &ExtraServicesWidget::onDeleteClicked);
 
@@ -43,6 +43,11 @@ ExtraServicesWidget::ExtraServicesWidget(QWidget *parent)
 
     // Подключаем двойной клик для редактирования
     connect(ui->tableView, &QTableView::doubleClicked, this, &ExtraServicesWidget::onEditClicked);
+
+    ui->label_pageName->setText(tr("Дополнительные услуги"));
+    ui->label_pageDescription->setText(tr("Страница для добавления/удаления/редактирования дополнительных услуг"));
+    ui->label_tableName->setText(tr("Таблица дополнительных услуг"));
+    ui->pushButton_addExtraService->setProperty("style", "primaryButton");
 
 }
 

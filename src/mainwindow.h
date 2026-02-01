@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "extraserviceswidget/extraserviceswidget.h"
 #include "activecardswidget/activecardswidget.h"
+#include <QFile>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,6 +25,7 @@ private slots:
     void slot_activeCardsButtonClicked();
     void slot_historyButtonClicked();
     void slot_extraServicesButtonCLicked();
+    void slot_setDarkTheme(bool isDark);
 
 private:
     Ui::MainWindow *ui;

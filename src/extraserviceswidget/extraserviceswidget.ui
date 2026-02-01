@@ -21,14 +21,14 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="label_pageName">
            <property name="text">
             <string>Page Name</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_2">
+          <widget class="QLabel" name="label_pageDescription">
            <property name="text">
             <string>page description</string>
            </property>
@@ -52,7 +52,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_3">
+          <widget class="QPushButton" name="pushButton_addExtraService">
            <property name="text">
             <string>+ Добавить Услугу</string>
            </property>
@@ -76,7 +76,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="label_tableName">
        <property name="text">
         <string>Table Name</string>
        </property>

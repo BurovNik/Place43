@@ -60,3 +60,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     config.json
+
+RESOURCES += \
+    res/res.qrc

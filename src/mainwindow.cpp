@@ -19,6 +19,10 @@ MainWindow::MainWindow(QWidget *parent)
     m_activeCardsWidget = new ActiveCardsWidget(this);
     int activeCardsIndex = ui->stackedWidget->addWidget(m_activeCardsWidget);
     ui->stackedWidget->setCurrentIndex(activeCardsIndex);
+    ui->label_programName->setText(tr("Place43"));
+    ui->label_activeCards->setText(tr("Посетителей в кафе:"));
+    ui->label_activeCardsNumber->setText(tr("1"));
+    slot_setDarkTheme(false);
 }
 
 MainWindow::~MainWindow()
@@ -44,5 +48,16 @@ void MainWindow::slot_historyButtonClicked()
 void MainWindow::slot_extraServicesButtonCLicked()
 {
     ui->stackedWidget->setCurrentWidget(m_extraServicesWidget);
+}
+
+void MainWindow::slot_setDarkTheme(bool isDark)
+{
+    QString filePath;
+    if (!isDark)
+        filePath = ":/LightThemeStyles.qss";
+    QFile file(filePath);
+    file.open(QFile::ReadOnly);
+    QString styleSheet = QLatin1String(file.readAll());
+    qApp->setStyleSheet(styleSheet);
 }
 

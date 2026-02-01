@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/cogwheel.svg</file>
+        <file>icons/bell.svg</file>
+        <file>LightThemeStyles.qss</file>
+    </qresource>
+</RCC>
