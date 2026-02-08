@@ -19,6 +19,7 @@ SOURCES += \
     src/extraserviceswidget/extraserviceswidget.cpp \
     src/menuwidget/menuwidget.cpp \
     src/extraserviceswidget/addextraservicedialog.cpp \
+    src/reservetionswidget/addreservationdialog.cpp \
     src/reservetionswidget/reservationswidget.cpp \
     src/utility/buttontabledelegate.cpp \
     src/utility/cardmodel.cpp \
@@ -33,6 +34,7 @@ HEADERS += \
     src/extraserviceswidget/extraserviceswidget.h \
     src/menuwidget/menuwidget.h \
     src/extraserviceswidget/addextraservicedialog.h \
+    src/reservetionswidget/addreservationdialog.h \
     src/reservetionswidget/reservationswidget.h \
     src/utility/Cards.h \
     src/utility/buttontabledelegate.h \
@@ -49,6 +51,7 @@ FORMS += \
     src/extraserviceswidget/extraserviceswidget.ui \
     src/menuwidget/menuwidget.ui \
     src/extraserviceswidget/addextraservicedialog.ui \
+    src/reservetionswidget/addreservationdialog.ui \
     src/reservetionswidget/reservationswidget.ui
 
 # TRANSLATIONS += \
