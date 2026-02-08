@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "extraserviceswidget/extraserviceswidget.h"
 #include "activecardswidget/activecardswidget.h"
+#include "reservetionswidget/reservationswidget.h"
 #include <QFile>
 
 QT_BEGIN_NAMESPACE
@@ -25,11 +26,13 @@ private slots:
     void slot_activeCardsButtonClicked();
     void slot_historyButtonClicked();
     void slot_extraServicesButtonCLicked();
+    void slot_reservationsButtonClicked();
     void slot_setDarkTheme(bool isDark);
 
 private:
     Ui::MainWindow *ui;
     ExtraServicesWidget *m_extraServicesWidget;
     ActiveCardsWidget *m_activeCardsWidget;
+    ReservationsWidget *m_reservationsWidget;
 };
 #endif // MAINWINDOW_H

@@ -45,6 +45,8 @@ ExtraServicesWidget::ExtraServicesWidget(QWidget *parent)
     connect(ui->tableView, &QTableView::doubleClicked, this, &ExtraServicesWidget::onEditClicked);
 
     ui->label_pageName->setText(tr("Дополнительные услуги"));
+    ui->label_pageName->setProperty("style", "pageNameLabel");
+
     ui->label_pageDescription->setText(tr("Страница для добавления/удаления/редактирования дополнительных услуг"));
     ui->label_tableName->setText(tr("Таблица дополнительных услуг"));
     ui->pushButton_addExtraService->setProperty("style", "primaryButton");

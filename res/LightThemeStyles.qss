@@ -44,3 +44,8 @@ QPushButton[style="primaryButton"]:disabled {
     border-color: #7FB9F9;
     color: rgba(255, 255, 255, 0.7);
 }
+
+QLabel[style="pageNameLabel"] {
+    font-family: "Inter";
+    font-size: 24px;
+}

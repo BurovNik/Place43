@@ -19,6 +19,7 @@ SOURCES += \
     src/extraserviceswidget/extraserviceswidget.cpp \
     src/menuwidget/menuwidget.cpp \
     src/extraserviceswidget/addextraservicedialog.cpp \
+    src/reservetionswidget/reservationswidget.cpp \
     src/utility/buttontabledelegate.cpp \
     src/utility/cardmodel.cpp \
     # src/utility/databasemanager.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     src/extraserviceswidget/extraserviceswidget.h \
     src/menuwidget/menuwidget.h \
     src/extraserviceswidget/addextraservicedialog.h \
+    src/reservetionswidget/reservationswidget.h \
     src/utility/Cards.h \
     src/utility/buttontabledelegate.h \
     src/utility/cardmodel.h \
@@ -46,7 +48,8 @@ FORMS += \
     src/mainwindow.ui \
     src/extraserviceswidget/extraserviceswidget.ui \
     src/menuwidget/menuwidget.ui \
-    src/extraserviceswidget/addextraservicedialog.ui
+    src/extraserviceswidget/addextraservicedialog.ui \
+    src/reservetionswidget/reservationswidget.ui
 
 # TRANSLATIONS += \
     # Place_43_ru_RU.ts
