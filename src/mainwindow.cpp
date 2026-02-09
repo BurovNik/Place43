@@ -7,11 +7,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    connect(ui->pushButton_allCards, &QPushButton::clicked, this, &MainWindow::slot_allCardsButtonClicked);
-    connect(ui->pushButton_activeCards, &QPushButton::clicked, this, &MainWindow::slot_activeCardsButtonClicked);
-    connect(ui->pushButton_extraServices, &QPushButton::clicked, this, &MainWindow::slot_extraServicesButtonCLicked);
-    connect(ui->pushButton_history, &QPushButton::clicked, this, &MainWindow::slot_historyButtonClicked);
-    connect(ui->pushButton_reservations, &QPushButton::clicked, this, &MainWindow::slot_reservationsButtonClicked);
+    m_menuWidget = new MenuWidget(this);
+//    connect(ui->pushButton_allCards, &QPushButton::clicked, this, &MainWindow::slot_allCardsButtonClicked);
+//    connect(ui->pushButton_activeCards, &QPushButton::clicked, this, &MainWindow::slot_activeCardsButtonClicked);
+//    connect(ui->pushButton_extraServices, &QPushButton::clicked, this, &MainWindow::slot_extraServicesButtonCLicked);
+//    connect(ui->pushButton_history, &QPushButton::clicked, this, &MainWindow::slot_historyButtonClicked);
+//    connect(ui->pushButton_reservations, &QPushButton::clicked, this, &MainWindow::slot_reservationsButtonClicked);
 
     m_extraServicesWidget = new ExtraServicesWidget(this);
     int extraServicesIndex = ui->stackedWidget->addWidget(m_extraServicesWidget);

@@ -1,6 +1,7 @@
 QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+include(menu-widget/MenuWidget.pri)
 
 TARGET = Place43
 
@@ -17,7 +18,6 @@ SOURCES += \
     src/main.cpp \
     src/mainwindow.cpp \
     src/extraserviceswidget/extraserviceswidget.cpp \
-    src/menuwidget/menuwidget.cpp \
     src/extraserviceswidget/addextraservicedialog.cpp \
     src/reservetionswidget/addreservationdialog.cpp \
     src/reservetionswidget/reservationswidget.cpp \
@@ -32,7 +32,6 @@ HEADERS += \
     src/extraserviceswidget/reductservicewidget.h \
     src/mainwindow.h \
     src/extraserviceswidget/extraserviceswidget.h \
-    src/menuwidget/menuwidget.h \
     src/extraserviceswidget/addextraservicedialog.h \
     src/reservetionswidget/addreservationdialog.h \
     src/reservetionswidget/reservationswidget.h \
@@ -49,7 +48,6 @@ FORMS += \
     src/extraserviceswidget/reductservicewidget.ui \
     src/mainwindow.ui \
     src/extraserviceswidget/extraserviceswidget.ui \
-    src/menuwidget/menuwidget.ui \
     src/extraserviceswidget/addextraservicedialog.ui \
     src/reservetionswidget/addreservationdialog.ui \
     src/reservetionswidget/reservationswidget.ui

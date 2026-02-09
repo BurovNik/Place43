@@ -6,6 +6,7 @@
 #include "activecardswidget/activecardswidget.h"
 #include "reservetionswidget/reservationswidget.h"
 #include <QFile>
+#include "menu-widget/menuwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -34,5 +35,6 @@ private:
     ExtraServicesWidget *m_extraServicesWidget;
     ActiveCardsWidget *m_activeCardsWidget;
     ReservationsWidget *m_reservationsWidget;
+    MenuWidget *m_menuWidget;
 };
 #endif // MAINWINDOW_H
