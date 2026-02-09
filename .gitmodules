@@ -1,0 +1,3 @@
+[submodule "menu-widget"]
+	path = menu-widget
+	url = https://github.com/BurovNik/menu-widget
